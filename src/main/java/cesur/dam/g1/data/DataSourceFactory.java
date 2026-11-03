@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 public class DataSourceFactory {
 
     /** URL de conexión a la base de datos MySQL. */
-    private static String url = "jdbc:mysql://localhost:3307/ad";
+    private static String url = "jdbc:mysql://localhost:3309/ad";
 
     /** Nombre de usuario obtenido de la variable de entorno {@code USER}. */
     private static String username = System.getenv("USER") ;

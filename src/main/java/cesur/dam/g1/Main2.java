@@ -16,6 +16,7 @@ public class Main2 {
     {
 
        DataBaseInitializer.initialize(DataSourceFactory.getDataSource());
+       DataBaseInitializer.loadData(DataSourceFactory.getDataSource());
 
        var dao = new EquipoJdbcDAO(DataSourceFactory.getDataSource());
        dao.findAll().forEach(System.out::println);
