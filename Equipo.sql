@@ -1,11 +1,4 @@
-create table Equipo
-(
-    id         int auto_increment
-        primary key,
-    nombre     varchar(80) not null,
-    categoria  varchar(80) null,
-    disponible tinyint(1)  null
-);
+
 
 INSERT INTO ad.Equipo (id, nombre, categoria, disponible) VALUES (2, 'Portátil HP ProBook 450', 'Portátiles', 1);
 INSERT INTO ad.Equipo (id, nombre, categoria, disponible) VALUES (3, 'Portátil Lenovo ThinkPad E15', 'Portátiles', 1);
