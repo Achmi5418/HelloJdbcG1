@@ -123,10 +123,9 @@ public class EquipoService_transactional {
     /**
      * Igual que {@link #bulkUpdateEquipo(List)} pero delegando la gestión de la
      * transacción en {@link #executeTransaction(Consumer)}.
-     * <p>
+     *
      * Si algún id no existe o ya no está disponible, lanza una excepción para
      * que {@code executeTransaction} haga rollback y no se marque ninguno.
-     * </p>
      *
      * @param ids identificadores de los equipos a marcar como no disponibles
      */
@@ -159,5 +158,40 @@ public class EquipoService_transactional {
             // executeTransaction ya ha hecho rollback al propagar la excepción.
             System.out.println("No se actualizó ninguno. " + e.getMessage());
         }
+    }
+
+    /**
+     * Ejercicio: intercambia el estado de disponibilidad de dos equipos.
+     *
+     * Debe ejecutarse en una única transacción: o se intercambian ambos equipos
+     * o no se modifica ninguno. Si algún id es nulo o no existe, no se cambia
+     * nada. Si ambos equipos ya tienen el mismo estado, no hay cambios.
+     *
+     * Debe usarse {@link #executeTransaction(Consumer)} y el DAO transaccional
+     * compartiendo la misma conexión.
+     *
+     * @param idA identificador del primer equipo
+     * @param idB identificador del segundo equipo
+     */
+    public void swapAvailability(Long idA, Long idB) {
+        /* TODO */
+        throw new UnsupportedOperationException("Pendiente de implementar");
+    }
+
+    /**
+     * Ejercicio: intercambia las categorías {@code cat1} y {@code cat2} en todos
+     * los equipos.
+     *
+     * Debe ejecutarse en una única transacción: o se intercambian todos los
+     * equipos o no se cambia ninguno. Si las categorías son iguales, nulas o
+     * vacías, no se modifica nada. Si alguna categoría no tiene equipos,
+     * tampoco hay cambios.
+     *
+     * @param cat1 primera categoría
+     * @param cat2 segunda categoría
+     */
+    public void swapCategory(String cat1, String cat2) {
+        /* TODO */
+        throw new UnsupportedOperationException("Pendiente de implementar");
     }
 }
